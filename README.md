@@ -1,69 +1,55 @@
-🧠 DOCMIND AI
+# 🧠 DOCMIND AI
 
-Hallucination-Safe Financial Document Intelligence System
-Powered by Gemini + RAG + Structured Extraction + Memory
+**Hallucination-Safe Financial Document Intelligence System**  
+Powered by **Gemini + RAG + Structured Extraction + Memory**
 
 DOCMIND AI is an enterprise-grade document assistant that analyzes payslips using:
 
-Deterministic data extraction
+- Deterministic data extraction  
+- Retrieval-Augmented Generation (RAG)  
+- Knowledge memory for multi-turn reasoning  
+- Strict hallucination control  
 
-Retrieval-Augmented Generation (RAG)
+This project is built for **learning & experimentation**.
 
-Knowledge memory for multi-turn reasoning
+---
 
-Strict hallucination control
+## 📁 Project Structure
 
-This project is built for learning & experimentation.
-
-📁 Project Structure
-DOCMIND-ai/
+DOCMIND/
 │
 ├── main.py
-├── Payslips.pdf        ← combine all your sample payslips into this file
+├── Payslips.pdf # Combine all your sample payslips into this file
 ├── requirements.txt
 └── README.md
 
-🛠️ Setup Instructions
-1️⃣ Create Virtual Environment
+---
+
+## 🛠️ Setup Instructions
+
+### 1️⃣ Create Virtual Environment
 python -m venv venv
 
 2️⃣ Activate Environment
-
 Windows (PowerShell):
-
 venv\Scripts\activate
-
-
 Mac / Linux:
-
-source venv/bin/activate
+soure venv/bin/activate
 
 3️⃣ Install Dependencies
 pip install -r requirements.txt
 
 4️⃣ Set Gemini API Key (Learning Only)
-
-PowerShell:
-
+Windows:
 $env:GOOGLE_API_KEY="#@##"
-
-
 Linux / Mac:
-
 export GOOGLE_API_KEY="#@##"
-
-
 ⚠️ For production, use secret managers or environment vaults.
 
 5️⃣ Prepare Your PDF
-
 Combine all sample payslips into one PDF
-
 Rename it to:
-
 Payslips.pdf
-
-
 Place it in the root directory
 
 6️⃣ Run the System
@@ -77,7 +63,7 @@ why october net salary is low compare to september
 🧱 Architecture Overview
 Layer	Description
 LLM	Gemini 2.5 Flash-Lite
-Vector Store	FAISS (learning), Postgres + pgvector (production)
+Vector Store	FAISS (learning), PostgreSQL + pgvector (production)
 Memory	In-process memory (learning), PostgreSQL (production)
 Auth	Demo mode (learning), User-level auth via Handloop
 Safety	Structured extraction + validation
